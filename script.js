@@ -65,7 +65,8 @@ function validate(e) {
         errorContainer.classList.add("invalid");
         isNameCorrect = false;
       } else if (value.trim().length < 3 || value.trim().length > 20) {
-        errorMessage.textContent = "Input cannot be less than 3 or greater than 20";
+        errorMessage.textContent =
+          "Input cannot be less than 3 or greater than 20";
         errorContainer.style.display = "flex";
         errorMessage.style.display = "block";
         errorContainer.classList.add("invalid");
@@ -222,7 +223,7 @@ function validate(e) {
 function onStateSelected(selectObject) {
   var value = selectObject.value;
   var cities = document.getElementById("city__options");
-
+  document.getElementById("city__options").style.display = "block";
   switch (value) {
     case "Connecticut":
       console.log(value);
@@ -351,7 +352,7 @@ function sendData(e) {
 
   let rowIndex = tbody.lastElementChild?.rowIndex || 0;
   let trNode;
-  if(rowIndex == 0) {
+  if (rowIndex == 0) {
     trNode = document.createElement("tr");
     trNode.innerHTML = `<tr>\
     <td>Name</td>\
@@ -361,9 +362,9 @@ function sendData(e) {
     <td>Address Line 2</td>\
     <td>Zipcode</td>\
   </tr>`;
-  tbody.appendChild(trNode);
+    tbody.appendChild(trNode);
   }
-  trNode  = document.createElement("tr");
+  trNode = document.createElement("tr");
   trNode.innerHTML = `<tr>\
   <td>Mr. ${fullName.value}</td>\
   <td>${emailId.value}</td>\
@@ -374,5 +375,19 @@ function sendData(e) {
 </tr>`;
   tbody.appendChild(trNode);
 
+  resetUI();
+
   this.reset();
+}
+
+function resetUI() {
+  isNameCorrect = false;
+  isPhoneNoCorrect = false;
+  isEmailCorrect = false;
+  isAddress1Correct = false;
+  isAddress2Correct = true;
+  isZipCodeCorrect = false;
+  isTitleSelected = false;
+  document.getElementById("submit_button").disabled = true;
+  document.getElementById("city__options").style.display = "none";
 }
