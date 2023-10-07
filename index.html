@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form__title">Feedback Form</div>
+      <form id="myForm">
+        <div class="title__details">
+          <input type="radio" name="title" id="dot-1" />
+          <input type="radio" name="title" id="dot-2" />
+          <input type="radio" name="title" id="dot-3" />
+          <span class="title">Title</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span id="Miss">Miss</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span id="Mr">Mr.</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span id="Mrs">Mrs.</span>
+            </label>
+          </div>
+        </div>
+        <div class="user__details">
+          <div class="input__box">
+            <span class="details">Full Name</span>
+            <input
+              id="fullName"
+              type="text"
+              placeholder="E.g: Vrishab Shetty"
+              required />
+              <div class="errorContainer error__container__fullName">
+                <span class="errorMessage error__message__fullName">Input is invalid</span>
+              </div>
+          </div>
+
+          <div class="input__box">
+            <span class="details">Email</span>
+            <input
+              id="emailId"
+              type="email"
+              placeholder="shetty.vr@northeastern.edu"
+              required />
+            <div class="errorContainer error__container__emailId">
+              <span class="errorMessage error__message__emailId">Input is invalid</span>
+            </div>
+          </div>
+
+          <div class="input__box">
+            <span class="details">Phone Number</span>
+            <input
+              id="phoneNumber"
+              type="tel"
+              placeholder="012-345-6789"
+              required />
+              <div class="errorContainer error__container__phoneNumber">
+                <span class="errorMessage error__message__phoneNumber">Input is invalid</span>
+              </div>
+          </div>
+
+          <div class="input__box">
+            <span class="details">Address</span>
+            <input id="Address1" type="text" required />
+            <div class="errorContainer error__container__Address1">
+              <span class="errorMessage error__message__Address1">Input is invalid</span>
+            </div>
+          </div>
+          <div class="input__box">
+            <span class="details">Address Line 2</span>
+            <input id="Address2" type="text" />
+            <div class="errorContainer error__container__Address2">
+              <span class="errorMessage error__message__Address2">Input is invalid</span>
+            </div>
+          </div>
+
+          <div class="input__box">
+            <span class="details">ZipCode</span>
+            <input id="zipcode" type="text" required />
+            <div class="errorContainer error__container__zipcode">
+              <span class="errorMessage error__message__zipcode">Input is invalid</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="comments">
+          <span class="details">Message</span>
+          <textarea
+            type="text"
+            placeholder="Type Message Here..."
+            rows="10"
+            required></textarea>
+        </div> -->
+
+        <div class="state__list">
+          <span class="details">State</span>
+          <select id="stateList" name="states" onchange="onStateSelected(this)">
+            <option value="Connecticut">Connecticut</option>
+            <option value="Maine">Maine</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="NULL" selected>Select the state</option>
+            <option value="Vermont">Vermont</option>
+          </select>
+        </div>
+
+        <br />
+        <hr size="3" />
+        <br />
+
+        <div id="city__options"></div>
+
+        <div class="button">
+          <input id="submit_button" type="submit" value="Submit" disabled />
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

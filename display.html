@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+  </head>
+  <body onload="onLoad(this)">
+    <p id="details"></p>
+  </body>
+  <script>
+    function onLoad(view) {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const fullName = urlParams.get("fullName");
+      const email = urlParams.get("email");
+      const phoneNo = urlParams.get("phoneNo");
+      const address = urlParams.get("address");
+      const zipCode = urlParams.get("zipCode");
+
+      
+      document.getElementById("details").innerHTML = 
+      `Name:     ${fullName} <br>
+      Email:     ${email}<br>
+      PhoneNo:   ${phoneNo}<br>
+      Address:   ${address} <br>
+      Zipcode:   ${zipCode}`
+    }
+  </script>
+</html>
