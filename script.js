@@ -2,7 +2,7 @@
 var MAX_LENGTH = 200;
 var MIN_LENGTH = 1;
 var specialChar = /[%\$#@&\*\+:;<>?!]/;
-var regExName = /^[a-zA-Z]+$/;
+var regExName = /^[a-zA-Z\s]+$/;
 var regExEmail = /([\w\.]+)@northeastern\.edu/;
 var regExPhone = /^\d{3}-?\d{3}-\d{4}$/;
 var regExZipCode = /^\d{5}(?:[-\s]\d{4})?$/;
@@ -329,7 +329,7 @@ function sendData(e) {
   e.preventDefault();
 
   //let actionURL = this.getAttribute("action");
-  const targetWebsite = "/home/vrishab/Desktop/Web Design/Assignment 04";
+  // const targetWebsite = "/home/vrishab/Desktop/Web Design/Assignment 04";
   const customData = {
     fullName: `Mr. ${fullName.value}`,
     email: `${emailId.value}`,
@@ -339,12 +339,40 @@ function sendData(e) {
   };
 
   // Construct the URL with parameters
-  const url = `${targetWebsite}/display.html?${new URLSearchParams(
-    customData
-  ).toString()}`;
+  // const url = `${targetWebsite}/display.html?${new URLSearchParams(
+  //   customData
+  // ).toString()}`;
 
-  console.log(url);
-  window.open(url, "_blank");
+  // console.log(url);
+  // window.open(url, "_blank");
 
-  this.submit();
+  var table = document.getElementById("myTable");
+  var tbody = table?.lastElementChild;
+
+  let rowIndex = tbody.lastElementChild?.rowIndex || 0;
+  let trNode;
+  if(rowIndex == 0) {
+    trNode = document.createElement("tr");
+    trNode.innerHTML = `<tr>\
+    <td>Name</td>\
+    <td>Email Id</td>\
+    <td>Phone Number</td>\
+    <td>Address Line 1</td>\
+    <td>Address Line 2</td>\
+    <td>Zipcode</td>\
+  </tr>`;
+  tbody.appendChild(trNode);
+  }
+  trNode  = document.createElement("tr");
+  trNode.innerHTML = `<tr>\
+  <td>Mr. ${fullName.value}</td>\
+  <td>${emailId.value}</td>\
+  <td>${phoneNo.value}</td>\
+  <td>${address1.value}</td>\
+  <td>${address2.value}</td>\
+  <td>${zipCode.value}</td>\
+</tr>`;
+  tbody.appendChild(trNode);
+
+  this.reset();
 }
