@@ -1,0 +1,22 @@
+%scrollable {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.library-wrapper {
+  @extend %scrollable
+}
+
+.shelve-library {
+  display: flex;
+  flex-direction: row;
+  gap: 0 72px;
+}
+
+@media screen and (max-width: 450px){
+  .shelve-library {
+    justify-content: left;
+    gap: 0 24px;
+    margin-bottom: 0.8125rem;
+  }
+}

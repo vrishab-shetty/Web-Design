@@ -1,0 +1,13 @@
+@import './shelve';
+
+.shelve-collection {
+  display: grid;
+  @include setGridTemplate($grid-columns-collection, 1fr, $grid-column-gap-collection);
+  @include grid-item(stretch, center);
+}
+
+@media  screen and (max-width: 640px) {
+  .shelve-collection {
+    @include setGridTemplate(1, 1fr, 0);
+  }
+}

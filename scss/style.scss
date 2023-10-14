@@ -1,0 +1,200 @@
+@import "./config";
+@import "./_utilities";
+@import "./shelve";
+@import './image';
+@import './mycollection';
+@import './library.scss';
+
+:root {
+  --black: black;
+  --white: white;
+}
+
+$primary-pallete: $primary-color, $on-primary;
+$secondary-pallete: $secondary-color, $on-secondary;
+
+* {
+  line-height: 1.625rem;
+  margin: 0rem 0rem 1.625rem;
+}
+
+html {
+  font-size: 100%;
+  font-family: Open Sans, Arial, Helvetica, Sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+footer,
+header,
+div,
+input,
+nav {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+ul li,
+ol li {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--black);
+  background: transparent;
+  transition: all, 0.3s;
+}
+
+img {
+  margin: 0;
+  overflow: clip;
+  overflow-clip-margin: content-box;
+}
+
+// Header
+.header {
+  @include prefixColor(color, $primary-pallete, background);
+  // background-color: $primary-color;
+  // color: $on-primary;
+  padding: 0.5rem 0 0 0;
+  margin: 0;
+
+  .wrapper {
+    h1 {
+      line-height: 3.25rem;
+      font-size: 2.5rem;
+      margin: 6.5rem 0 1.625rem 0;
+
+      a {
+
+        &:link,
+        &:visited,
+        &:hover,
+        &:visited:hover {
+          color: $on-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// Nav Bar
+.nav {
+  @include prefixColor(color, $secondary-pallete, background);
+  // background-color: $secondary-color;
+  border-bottom: 1px solid $on-secondary;
+  transition: all;
+  transition-duration: 0.5s;
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    list-style: none;
+
+    li {
+      margin-bottom: 0;
+
+      a:link,
+      a:hover {
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem 2rem;
+        margin: 0;
+        font-weight: bold;
+        color: $on-secondary;
+      }
+
+      a:hover {
+        background-color: changeAlpha($secondary-color, 0.5);
+      }
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .nav-list {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+// Main Body
+.content {
+  h2 {
+    border: 2px solid $primary-color;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+}
+
+.shelve-home {
+  display: grid;
+  @include setGridTemplate($grid-columns-home, 1fr, $grid-column-gap-home);
+  padding: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .shelve-home {
+    @include setGridTemplate($grid-columns-home-mobile, 1fr, $grid-column-gap-home-mobile);
+    padding: 0px;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  .shelve-home  {
+    @include setGridTemplate(1, 1fr, 0);
+    padding: 0px;
+  }
+  
+}
+
+.grid-item {
+  @include grid-item(stretch, center);
+  text-align: center;
+
+  img {
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+// Footer
+.footer {
+  @include prefixColor(color, $primary-pallete, background);
+  // background-color: $primary-color;
+  // color: $on-primary;
+  font-size: 85%;
+  margin: 4rem 0 0 0;
+  padding: 1rem;
+
+  .wrapper {
+    @include prefixColor(color, $secondary-pallete, background);
+    // background-color: $secondary-color;
+    // color: $on-secondary;
+    border-radius: 3px;
+    padding: 1rem;
+  }
+}

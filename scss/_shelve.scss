@@ -1,0 +1,21 @@
+// Home
+$grid-columns-home: 3;
+$grid-column-gap-home: 20px;
+
+$grid-columns-home-mobile: 2;
+$grid-column-gap-home-mobile: 8px;
+
+// Collection
+$grid-columns-collection: 2;
+$grid-column-gap-collection: 20px;
+
+
+
+@mixin grid-item($align, $justify) {
+  place-self: $align $justify;
+}
+
+@mixin setGridTemplate($columns, $trackSize, $gapColumn) {
+  grid-template-columns: repeat($columns, $trackSize);
+  gap: 0.8125rem $gapColumn;
+}
