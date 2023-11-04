@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form__title">Welcome, <span id="loggedInUser"></span></div> 
+    <form id="calculator_form">
+      <div class="user__details">
+        <div class="input__box">
+          <span class="details">Number 1:</span>
+          <input
+            id="number1"
+            type="text"
+            placeholder="E.g: 1, -2, 3.0"
+            required />
+            <div id="error__container__number1" class="errorContainer">
+              <span id="error__message__number1" class="errorMessage">Input is invalid</span>
+            </div>
+        </div>
+        <div class="input__box">
+          <span class="details">Number 2:</span>
+          <input
+            id="number2"
+            type="text"
+            placeholder="E.g: 1, -2, 3.0"
+            required />
+            <div id="error__container__number2" class="errorContainer">
+              <span id="error__message__number2" class="errorMessage">Input is invalid</span>
+            </div>
+        </div>
+      </div>
+      
+      <div class="operation">
+        <button type="button" id="addBtn" disabled>Add</button>
+        <button type="button" id="subtractBtn" disabled>Subtract</button>
+        <button type="button" id="multiplyBtn" disabled>Multiply</button>
+        <button type="button" id="divideBtn" disabled>Divide</button>
+      </div>
+
+      <div class="result">
+        <span class="label">Result:</span>
+        <input type="text" id="result" readonly>
+      </div>
+
+    </form>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script_home.js"></script>
+</html>

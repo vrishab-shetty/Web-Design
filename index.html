@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Part A</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form__title">Login</div>    
+      <form id="login_form">
+        <div class="user__details">
+          <div class="input__box">
+            <span class="details">Username</span>
+            <input
+              id="username"
+              type="text"
+              placeholder="E.g: vrishab_shetty"
+              required />
+              <div id="error__container__username" class="errorContainer">
+                <span id="error__message__username" class="errorMessage">Input is invalid</span>
+              </div>
+          </div>
+
+          <div class="input__box">
+            <span class="details">Email</span>
+            <input
+              id="email"
+              type="email"
+              placeholder="shetty.vr@northeastern.edu"
+              required />
+            <div id="error__container__email" class="errorContainer">
+              <span id="error__message__email" class="errorMessage">Input is invalid</span>
+            </div>
+          </div>
+
+          <div class="input__box">
+            <span class="details">Password</span>
+            <input id="password" type="text" required />
+            <div id="error__container__password"class="errorContainer">
+              <span id="error__message__password" class="errorMessage">Input is invalid</span>
+            </div>
+          </div>
+          <div class="input__box">
+            <span class="details">Confirm Password</span>
+            <input id="confirm_password" type="text" required/>
+            <div id="error__container__confirm_password" class="errorContainer">
+              <span id="error__message__confirm_password" class="errorMessage">Input is invalid</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="button">
+          <input id="login_button" type="submit" value="Login" disabled />
+        </div>
+
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script_index.js"></script>
+</html>
