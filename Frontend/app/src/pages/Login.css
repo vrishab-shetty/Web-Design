@@ -1,0 +1,31 @@
+.login_body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 35px 0 12px 0;
+}
+
+.login_bg {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.error_container {
+    display: none;
+    width: 100%;
+    align-items: center;
+}
+
+.error_message {
+    color: red;
+    font-size: 14px;
+    white-space: wrap;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}

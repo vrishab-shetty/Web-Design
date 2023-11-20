@@ -1,0 +1,6 @@
+.aboutus_bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

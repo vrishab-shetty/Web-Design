@@ -1,0 +1,23 @@
+.box {
+    width: 100%;
+    background-color: var(--white);
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.box_title {
+    position: relative;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.box_title::before {
+    content: "";
+    height: 3.5px;
+    width: 30px;
+    background: var(--main_green);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+}

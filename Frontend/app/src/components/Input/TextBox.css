@@ -1,0 +1,19 @@
+.title {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.edit_text {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+

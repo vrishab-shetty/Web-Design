@@ -1,0 +1,21 @@
+.button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+.button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: var(--main_green);
+  transition: all 0.3s ease;
+}
+
+.button input:disabled {
+  background: var(--sub-grey);
+}
